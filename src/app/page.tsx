@@ -25,7 +25,7 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [isCalling]);
 
-  // 2. Twilio Start Call Function (Backend: /call/call/start)
+  // 2. Twilio Start Call Function (Backend: /call/start)
   const handleMakeCall = async () => {
     if (!phoneNumber || phoneNumber.length < 10) {
       return alert("Bhai, sahi mobile number dalo (e.g. +91XXXXXXXXXX)");
@@ -33,7 +33,7 @@ export default function Home() {
     
     setIsCalling(true);
     try {
-      const response = await fetch('https://ai-call-center-1-48xk.onrender.com/call/call/start', {
+      const response = await fetch('https://ai-call-center-1-48xk.onrender.com/call/start', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
@@ -85,7 +85,6 @@ export default function Home() {
             <div className="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-widest text-gray-400">
               <button onClick={() => setActiveTab('overview')} className={`hover:text-white transition-all ${activeTab === 'overview' ? 'text-blue-400 border-b-2 border-blue-500 pb-1' : ''}`}>Overview</button>
               <button onClick={() => setActiveTab('studio')} className={`hover:text-white transition-all ${activeTab === 'studio' ? 'text-blue-400 border-b-2 border-blue-500 pb-1' : ''}`}>Agent Studio</button>
-              <button className="hover:text-white transition-all">Billing</button>
             </div>
             <button onClick={() => setShowDialer(true)} className="bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded-2xl text-xs font-black uppercase tracking-tighter transition-all flex items-center gap-2 shadow-xl shadow-blue-600/30">
               <Zap size={14} fill="white" /> New Call
@@ -158,7 +157,7 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="glass p-8 border-blue-500/20 bg-blue-500/5">
+              <div className="glass p-8 border-blue-500/20 bg-blue-500/5 text-center">
                 <h3 className="text-sm font-black uppercase tracking-widest text-blue-400 mb-8">Quick Preview</h3>
                 <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl shadow-blue-600/40 hover:scale-110 transition-transform cursor-pointer">
                    <Play fill="white" className="ml-1" />
