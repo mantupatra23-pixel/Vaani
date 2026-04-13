@@ -1,8 +1,10 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
-  output: 'standalone', // Ye Render/Docker ke liye build size chota rakhta hai
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'standalone',
+  // Isse standalone server ko har jagah se access milta hai
+  experimental: {
+    outputFileTracingRoot: undefined,
+  },
 };
 
 export default nextConfig;
