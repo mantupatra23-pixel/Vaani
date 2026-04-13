@@ -34,7 +34,7 @@ export default function Home() {
     setIsCalling(true);
     try {
       // Calling your Render Backend (Twilio Logic)
-      const response = await fetch('https://ai-call-center-1-48xk.onrender.com/make-call', {
+      const response = await fetch('https://ai-call-center-1-48xk.onrender.com/call/make-call', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
