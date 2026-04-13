@@ -1,11 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* Standard configuration for Render stable deployment */
-  reactStrictMode: true,
-  
-  // Standalone mode ko hata diya hai taaki standard 'npm run start' chale
-  // Isse Tailwind aur static assets load hone mein koi issue nahi aayega
+  // Isse Next.js natively Tailwind v4 (Alpha/Beta) ko handle karta hai
+  experimental: {
+    // Agar Next.js version 15 hai toh ye natively work karega
+  }
 };
 
 export default nextConfig;
